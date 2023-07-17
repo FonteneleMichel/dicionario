@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import '../config/config.dart';
+
 class WordListScreen extends StatefulWidget {
   @override
   _WordListScreenState createState() => _WordListScreenState();
@@ -18,7 +20,7 @@ class _WordListScreenState extends State<WordListScreen> {
   }
 
   Future<void> _fetchRandomWord() async {
-    const apiKey = '3328284cecmshfd7382c672aeacep153913jsn16d6b9bbe248';
+    const apiKey = Config.apiKey;
     const apiUrl = 'https://wordsapiv1.p.rapidapi.com/words/';
     const headers = {
       'X-RapidAPI-Key': apiKey,
